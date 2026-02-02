@@ -588,3 +588,27 @@ body::after{
    11) Footer / header minor safety (we’ll clone later)
 ------------------------------ */
 header, footer { color: inherit; }
+
+/* ===== EMERGENCY VISIBILITY OVERRIDE (remove after diagnosis) ===== */
+html, body {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* GHL wrappers that sometimes get hidden */
+#app, #page, .c-wrapper, .c-section, .hl_page-creator, .hl_page-preview, .hl_page-container,
+[class*="hl_"], [id*="hl_"] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+/* In case a pseudo-element overlay is “covering” the page */
+body::before,
+body::after {
+  display: none !important;
+}
+
